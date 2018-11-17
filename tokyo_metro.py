@@ -29,4 +29,4 @@ df = pd.DataFrame(data)
 df = df.groupby('Name').sum().reset_index()
 names = df.Name.apply(lambda x: pd.Series(re.split('[〈・]', x.replace('〉', ''))))
 names.columns = ['Name', 'Name2']
-pd.concat([names, df.drop('Name', axis=1)], axis=1).to_csv('data/tokyo_metro.csv')
+pd.concat([names, df.drop('Name', axis=1)], axis=1).to_csv('data/tokyo_metro.csv', index=None)

@@ -31,4 +31,4 @@ if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
     urls = ['http://www.jreast.co.jp/passenger/'] + [f'http://www.jreast.co.jp/passenger/2017_0{i}.html' for i in range(1, 10)]
     df = pd.concat([parse(url) for url in tqdm(urls)], ignore_index=True)
-    df.to_csv('data/jr.csv')
+    df.to_csv('data/jr.csv', index=None)
